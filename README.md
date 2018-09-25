@@ -55,7 +55,8 @@ cat_sorted = cat.sort_values(by='count', ascending=False)
 We can plot them and see, what is the top 10 of the catergories
 ```
 sns.set(style="whitegrid")
-ax = sns.barplot(x="count", y="Category", data=cat_sorted[:10])
+sns.set_color_codes("muted")
+ax = sns.barplot(x="count", y="Category", data=cat_sorted[:10], color='b')
 ```
 [top_cat_10]: https://github.com/athoya/ds-gpstore-trend-2018/blob/master/images/top_10_category.png "Top 10 Category"
 ![alt text][top_cat_10]
