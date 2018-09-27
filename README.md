@@ -19,7 +19,7 @@ Last Updated - Date when the app was last updated on Play Store (as when scraped
 Current Ver - Current version of the app available on Play Store (as when scraped)
 Android Ver - Min required Android version (as when scraped)
 ```
-
+\
 In this mini project, we will use pandas and sns.
 Pandas framework is a good library to handle data dan manipulate data.
 Seaborn is also one good library for displaying data, similar with matlibplot.
@@ -28,6 +28,7 @@ import pandas as pd
 import seaborn as sns
 ```
 
+\
 We can download the csv data first, then we can import it and convert as DataFrame in pandas.
 We can see the number of data rows by calling shape function in DataFrame. It show that we have **10841** rows.
 ```
@@ -35,6 +36,7 @@ df = pd.read_csv('googleplaystore.csv')
 print(df.shape[0])
 ```
 
+\
 If we print the first the of the dataset, we will get the following table.
 ```
 print(df[:3])
@@ -46,12 +48,14 @@ Photo Editor & Candy Camera & Grid & ScrapBook | ART_AND_DESIGN | 4.1 | 159 | 19
 Coloring book moana |	ART_AND_DESIGN |	3.9 |	967 |	14M |	500,000+ |	Free |	0 |	Everyone |	Art & Design;Pretend Play |	January 15, 2018 |	2.0.0 |	4.0.3 and up
 U Launcher Lite – FREE Live Cool Themes, Hide ... |	ART_AND_DESIGN	| 4.7 |	87510 |	8.7M |	5,000,000+ |	Free |	0 |	Everyone |	Art & Design |	August 1, 2018 |	1.2.4 |	4.0.3 and up
 
+\
 First, we can populate the app based on categories and count the categories. The idea is to see how the distribution of app in term of category.
 ```
 cat = df.groupby(['Category']).size().to_frame(name = 'count').reset_index()
 cat_sorted = cat.sort_values(by='count', ascending=False)
 ```
 
+\
 We can plot them and see, what is the top 10 of the catergories
 ```
 sns.set(style="whitegrid")
